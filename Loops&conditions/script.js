@@ -1,5 +1,5 @@
 {
-    let age = +prompt("Enter your age:");
+    // let age = +prompt("Enter your age:");
 
     if (age < 0 || isNaN(age)) {
         console.log("Try again");
@@ -23,7 +23,7 @@
 }
 
 {
-    let someNumber = +prompt("Enter a number between 0 and 9:");
+    // let someNumber = +prompt("Enter a number between 0 and 9:");
 
     switch (someNumber) {
         case 0:
@@ -62,8 +62,8 @@
 }
 
 {
-    let x = +prompt("Enter the first number:");
-    let y = +prompt("Enter the second number:");
+    // let x = +prompt("Enter the first number:");
+    // let y = +prompt("Enter the second number:");
 
     function calculate(x, y) {
         return x + y;
@@ -73,8 +73,8 @@
 
 
 {
-    let z = +prompt("Enter the first number:");
-    let w = +prompt("Enter the second number:");
+    // let z = +prompt("Enter the first number:");
+    // let w = +prompt("Enter the second number:");
     if (isNaN(z) || isNaN(w)) {
         console.log("Try again");
     }
@@ -91,8 +91,8 @@
 }
 
 {
-    let a = +prompt("Enter the first number:");
-    let b = +prompt("Enter the second number:");
+    // let a = +prompt("Enter the first number:");
+    // let b = +prompt("Enter the second number:");
     if (isNaN(a) || isNaN(b)) {
         console.log("Try again");
     }
@@ -108,7 +108,7 @@
 }
 
 {
-    let number = +prompt("Напишіть число для перевірки дільників");
+    // let number = +prompt("Напишіть число для перевірки дільників");
     if (isNaN(number) || number <= 0) {
         console.log("Спробуйте ще раз");
     }
@@ -120,7 +120,7 @@
         }
     }
 
-    let n = +prompt("Enter a number to check if it's a palindrome:");
+    // let n = +prompt("Enter a number to check if it's a palindrome:");
     if (isNaN(n) || n < 0) {
         console.log("Try again");
     }
@@ -137,7 +137,7 @@
 }
 
 {
-    let sumBeforeDiscount = +prompt("Сума до знижки:");
+    // let sumBeforeDiscount = +prompt("Сума до знижки:");
     if (isNaN(sumBeforeDiscount) || sumBeforeDiscount < 0) {
         console.log("Спробуйте ще раз");
     }
@@ -161,7 +161,7 @@
 {
     let positive = 0, negative = 0, zero = 0, even = 0, odd = 0;
     for (let i = 0; i < 10; i++) {
-        let number = +prompt("Enter a number:");
+        // let number = +prompt("Enter a number:");
         if (isNaN(number)) {
             console.log("Try again");
             i--;
@@ -195,7 +195,7 @@
     let index = 0;
 
     while (true) {
-        let showNext = confirm(`${days[index]}. Do you want to see the next day?`);
+        // let showNext = confirm(`${days[index]}. Do you want to see the next day?`);
         if (!showNext) break; // 
         index = (index + 1) % days.length;
     }
