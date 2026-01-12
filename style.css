@@ -17,3 +17,55 @@ a {
     border: 1px solid rgb(146, 208, 255);
     box-shadow: 10px 10px 15px rgba(177, 205, 225, 0.2);
 }
+
+#box {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0px;
+    background: darkkhaki;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    height: 500px;
+    width: 700px;
+    color: darkolivegreen;
+}
+
+#list {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    background: rgb(215, 239, 215);
+    border-radius: 10px;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.2);
+    height: 300px;
+    width: 600px;
+    justify-content: space-evenly;
+}
+
+#listItem {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: darkolivegreen;
+}
+
+.bought {
+    text-decoration: line-through;
+    color: gray;
+}
+
+span {
+    margin-top: 30px;
+    font-weight: bold;
+}
+
+button {
+    margin-left: 20px;
+    padding: 5px;
+    background-color: darkolivegreen;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
