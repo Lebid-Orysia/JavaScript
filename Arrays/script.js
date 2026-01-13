@@ -4,7 +4,7 @@ const shoppingList = [
     { name: 'Eggs', count: 12, buy: false, price: 7 },
     { name: 'Cheese', count: 2, buy: false, price: 70 },
     { name: 'Coffee', count: 1, buy: false, price: 120 },
-    { name: 'Milk', count: 3, buy: false, price: 50}
+    { name: 'Milk', count: 3, buy: false, price: 50 }
 ];
 
 shoppingList.forEach(item => {
@@ -32,6 +32,7 @@ function renderList() {
             removeProduct(item.name);
         });
         li.appendChild(removeButton);
+
         if (item.buy === false) {
             const button = document.createElement("button");
             button.textContent = "Купити";
@@ -44,7 +45,7 @@ function renderList() {
         } else {
             li.classList.add("bought");
         }
-        
+
 
         ul.appendChild(li);
     });
@@ -63,41 +64,63 @@ function buyProduct(productName) {
         alert("Товар не знайдено");
     }
 }
-buyProduct("Eggs");
-buyProduct("Milk");
+
 
 function removeProduct(productName) {
     const newList = shoppingList.filter(
         item => item.name.toLowerCase() !== productName.toLowerCase()
     );
 
-    shoppingList.length = 0;      
-    shoppingList.push(...newList); 
+    shoppingList.length = 0;
+    shoppingList.push(...newList);
 
     renderList();
 }
 
-function addProduct(name, count, price) {
-  // шукаємо продукт у списку
-  const existingProduct = shoppingList.find(
-    item => item.name.toLowerCase() === name.toLowerCase()
-  );
 
-  if (existingProduct) {
-    // якщо продукт вже є → збільшуємо кількість
-    existingProduct.count += count;
-    existingProduct.price = price; // можна оновлювати ціну, якщо потрібно
-    existingProduct.sum = existingProduct.count * existingProduct.price;
-  } else {
-    // якщо продукт новий → додаємо обʼєкт
-    shoppingList.push({
-      name: name,
-      count: count,
-      buy: false,       // новий продукт ще не куплений
-      price: price,
-      sum: count * price
-    });
-  }
-}
+const nameInput = document.getElementById('name');
+const priceInput = document.getElementById('price');
+const countInput = document.getElementById('count');
+const addBtn = document.getElementById('addBtn');
+const output = document.getElementById('output');
+
+addBtn.onclick = function () {
+    const name = nameInput.value;
+    const price = Number(priceInput.value);
+    const count = Number(countInput.value);
+
+    if (!name || price <= 0 || count <= 0) {
+        alert('Something is wrong with your wish');
+        return;
+    }
+    addProduct(name, count, price, false);
     renderList();
-    
+
+    nameInput.value = "";
+    priceInput.value = "";
+    countInput.value = "";
+}
+function addProduct(name, count, price, buy) {
+    const presentProduct = shoppingList.find(
+        product => product.name.toUpperCase() === name.toUpperCase()
+    );
+
+
+    if (presentProduct) {
+        presentProduct.count += count;
+        presentProduct.price = presentProduct.price * presentProduct.count;
+    }
+    else {
+        shoppingList.push({
+            name: name,
+            count: count,
+            buy: buy,
+            price: price * count
+        });
+    }
+}
+renderList();
+
+
+
+
