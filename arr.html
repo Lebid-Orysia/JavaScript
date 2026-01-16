@@ -19,15 +19,17 @@
 
 <body>
   <div id="box"> Shopping List:
-    <ul id="list">
-    </ul>
-    <input type="text" id="name" placeholder="Назва товару">
-    <input type="number" id="price" placeholder="Ціна">
-    <input type="number" id="count" placeholder="Кількість">
+    <div>
+      <input type="text" id="name" placeholder="Product name">
+      <input type="number" id="price" placeholder="Price">
+      <input type="number" id="count" placeholder="Count">
+      <button id="addBtn">Add product</button>
+    </div>
 
-    <button id="addBtn">Додати</button>
+    <h3>Total bought: <span id="total">0</span></h3>
 
-    <div id="output"></div>
+    <ul></ul>
+
 
   </div>
 </body>
