@@ -8,7 +8,6 @@ let shopList = [
     { name: 'ковбаса', count: 1, buy: false, price: 200 }
 ];
 
-// SORT (not bought first)
 function sortList(list) {
     const notBought = [];
     const bought = [];
@@ -19,7 +18,6 @@ function sortList(list) {
     return notBought.concat(bought);
 }
 
-// TOTAL — ONLY BOUGHT PRODUCTS
 function calculateTotal() {
     return shopList.reduce((total, item) => {
         if (item.buy) {
@@ -29,7 +27,6 @@ function calculateTotal() {
     }, 0);
 }
 
-// RENDER
 function renderList() {
     const ul = document.querySelector('ul');
     const totalEl = document.getElementById('total');
@@ -61,7 +58,6 @@ function renderList() {
     totalEl.textContent = calculateTotal();
 }
 
-// ADD PRODUCT
 function addProduct(name, price, count) {
     const product = shopList.find(
         item => item.name.toLowerCase() === name.toLowerCase()
@@ -81,7 +77,6 @@ function addProduct(name, price, count) {
     renderList();
 }
 
-// BUTTON HANDLER
 document.getElementById('addBtn').addEventListener('click', () => {
     const name = document.getElementById('name').value.trim();
     const price = Number(document.getElementById('price').value);
@@ -96,5 +91,4 @@ document.getElementById('addBtn').addEventListener('click', () => {
     document.getElementById('count').value = '';
 });
 
-// INIT
 renderList();
