@@ -158,12 +158,39 @@ img {
 }
 
 #myBtn {
-  width: 150px;           
-  height: 150px;
-  border-radius: 50%;    
-  border: none;
-  background-color: #2f3e49;
-  color: white;
-  cursor: pointer;
-  margin: 100px 0 0 200px
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    border: none;
+    background-color: #2f3e49;
+    color: white;
+    cursor: pointer;
+    margin: 100px 0 0 200px
+}
+
+#content,
+#editor {
+    width: 100%;
+    min-height: 150px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    font-size: 16px;
+}
+
+#editor {
+    display: none;
+}
+
+.hint {
+    color: #666;
+    font-size: 0.9em;
+    margin-bottom: 10px;
+}
+
+kbd {
+    background: #eee;
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 0 4px;
 }

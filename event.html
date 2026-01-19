@@ -18,89 +18,13 @@
 </head>
 
 <body>
-  <!DOCTYPE html>
-  <html lang="uk">
 
-  <head>
-    <meta charset="UTF-8">
-    <title>Редактор тексту Ctrl+E / Ctrl+S</title>
-    <style>
-      #content,
-      #editor {
-        width: 100%;
-        min-height: 150px;
-        padding: 10px;
-        border: 1px solid #ccc;
-        box-sizing: border-box;
-        font-size: 16px;
-      }
+  <p class="hint">Натисніть <kbd>Ctrl</kbd> + <kbd>E</kbd> для редагування, <kbd>Ctrl</kbd> + <kbd>S</kbd> для
+    збереження.</p>
 
-      #editor {
-        display: none;
-      }
+  <div id="content">Це початковий текст. Натисніть Ctrl+E, щоб змінити його.</div>
 
-      /* Спочатку textarea прихована */
-
-      .hint {
-        color: #666;
-        font-size: 0.9em;
-        margin-bottom: 10px;
-      }
-
-      kbd {
-        background: #eee;
-        border: 1px solid #aaa;
-        border-radius: 3px;
-        padding: 0 4px;
-      }
-    </style>
-  </head>
-
-  <body>
-
-    <p class="hint">Натисніть <kbd>Ctrl</kbd> + <kbd>E</kbd> для редагування, <kbd>Ctrl</kbd> + <kbd>S</kbd> для
-      збереження.</p>
-
-    <div id="content">Це початковий текст. Натисніть Ctrl+E, щоб змінити його.</div>
-
-    <textarea id="editor"></textarea>
-
-    <script>
-      const viewElement = document.getElementById('content');
-      const editElement = document.getElementById('editor');
-
-      document.addEventListener('keydown', function (event) {
-        // Перевіряємо натискання Ctrl (для Win/Linux) АБО Command (для Mac)
-        const isModifierPressed = event.ctrlKey || event.metaKey;
-
-        // Отримуємо назву клавіші в нижньому регістрі для уніфікації
-        const key = event.key.toLowerCase();
-
-        // Обробка "E" (Редагувати): англійська 'e' або українська 'у'
-        if (isModifierPressed && (key === 'e' || key === 'у')) {
-          event.preventDefault();
-
-          if (viewElement.style.display !== 'none') {
-            editElement.value = viewElement.innerText;
-            viewElement.style.display = 'none';
-            editElement.style.display = 'block';
-            editElement.focus();
-          }
-        }
-
-        // Обробка "S" (Зберегти): англійська 's' або українська 'і'
-        if (isModifierPressed && (key === 's' || key === 'і')) {
-          event.preventDefault();
-
-          if (editElement.style.display === 'block') {
-            viewElement.innerText = editElement.value;
-            editElement.style.display = 'none';
-            viewElement.style.display = 'block';
-          }
-        }
-      });
-    </script>
-  </body>
-
-  </html>
+  <textarea id="editor"></textarea>
 </body>
+
+</html>
